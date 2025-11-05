@@ -26,10 +26,10 @@ public class TimeFormat {
 		else{
 		formattedMinutes = "" + minutes;}
 		//קבלת am או pm
-		if (hours<13){
-		System.out.println(displayHours + ":" + formattedMinutes + "AM");}
+		if (hours<12){
+		System.out.println(displayHours + ":" + formattedMinutes + " AM");}
 		else{
-		System.out.println(displayHours + ":" + formattedMinutes + "PM");
+		System.out.println(displayHours + ":" + formattedMinutes + " PM");
 		}
 	}
 }
