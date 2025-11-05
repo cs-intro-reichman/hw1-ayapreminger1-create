@@ -16,8 +16,16 @@ public class TimeFormat {
 		// Does the same with the minutes part of the input.
 		int minutes = Integer.parseInt("" + args[0].charAt(3) + args[0].charAt(4));
         
-		int displayHours =hours %12;
-		if (displayHours == 0) displayHours = 12;
+		int displayHours;
+		if (hours == 0 ) {
+			displayHours = 0;}
+			else{
+				displayHours=hours %12;
+				if (displayHours==0) displayHours=12; 
+			}
+		}
+		
+
 
 		// הוספת 0 לפני דקות קטנות מ-10
 		String formattedMinutes;
