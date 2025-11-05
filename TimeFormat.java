@@ -1,4 +1,7 @@
 // Represents the hh:mm time format using an AM/PM format. 
+
+import java.text.Format;
+
 public class TimeFormat {
 	public static void main(String[] args) {
 		// In Java, the command-line arguments args[0], args[1], ... are represented
@@ -9,9 +12,24 @@ public class TimeFormat {
 		// It concatenates the empty string "" with the leftmost hour-digit. 
 		// It then concatenates the resulting string with the rightmost hour-digit,
 		// and then uses parseInt to cast the resulting string as an int.
-		int hours = Integer.parseInt("" + args[0].charAt(0) + args[0].charAt(1));
+		int hours = Integer.parseInt("" + args[0].charAt(0)+ args[0].charAt(1));
 		// Does the same with the minutes part of the input.
 		int minutes = Integer.parseInt("" + args[0].charAt(3) + args[0].charAt(4));
-        // Replace this comment with the rest of your code
+        
+		int displayHours =hours %12;
+		if (displayHours == 0) displayHours = 12;
+
+		// הוספת 0 לפני דקות קטנות מ-10
+		String formattedMinutes;
+		if (minutes<10){
+		formattedMinutes = "0" + minutes;}
+		else{
+		formattedMinutes = "" + minutes;}
+		//קבלת am או pm
+		if (hours<13){
+		System.out.println(displayHours + ":" + formattedMinutes + "AM");}
+		else{
+		System.out.println(displayHours + ":" + formattedMinutes + "PM");
+		}
 	}
 }
